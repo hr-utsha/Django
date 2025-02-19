@@ -56,6 +56,27 @@ def contact(request) :
 ```
 
 
+<h4> template </h4>
+
+```python
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputEmail1"  name="name">
+    </div>
+    <div class="mb-3">
+        <input type="email" class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp" name="email">
+    </div>
+    <div class="mb-3">
+        <input type="file" class="form-control" id="exampleInputImage" name="image">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+```
+
 
 
 
