@@ -19,3 +19,49 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+```
+
+<h4> models.py </h4>
+
+```python
+from django.db import models
+
+# Create your models here.
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField(unique=True)
+    image = models.ImageField(upload_to='uploads/', null=True, blank=True)
+```
+
+
+<h4> views.py </h4>
+
+```python
+from django.shortcuts import render,HttpResponse
+from . import models
+
+# Create your views here.
+def contact(request) : 
+    if request.method == 'POST' :
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        image = request.FILES.get('image')
+
+        contact = models.Contact(name=name,email=email,image=image)
+        contact.save()
+
+        return HttpResponse("succesfully added.")
+
+    return render(request,'contact/index.html')
+```
+
+
+
+
+
+
+
+
+
+
+
