@@ -29,3 +29,22 @@ event_date = forms.DateTimeField()
 duration = forms.DurationField()
 
 ```
+
+<h3> ✅ Boolean Field : </h3>
+
+```
+agree = forms.BooleanField(required=True)
+```
+
+<h3> ✅ Choice Fields :  </h3>
+
+```
+GENDER_CHOICES = [('M', 'Male'), ('F', 'Female')]
+gender = forms.ChoiceField(choices=GENDER_CHOICES)
+
+
+interests = forms.MultipleChoiceField(choices=[('1', 'Sports'), ('2', 'Music')])
+
+```
+
+
