@@ -54,8 +54,9 @@ python manage.py migrate
 
 from django.contrib import admin
 from .models import User
+from . import Student
 
-admin.site.register(User, UserAdmin)
+admin.site.register(Student)
 
 ```
 
