@@ -23,7 +23,8 @@ models.DateTimeField(auto_now_add=True, auto_now=True)  # Stores date and time
 models.DurationField()                  # For time durations
 
 ```
-<h3> models.py </h3>
+
+# models.py
 
 ```python
 
