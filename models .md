@@ -40,8 +40,14 @@ models.OneToOneField('OtherModel', on_delete=models.CASCADE)  # One-to-One
 models.ManyToManyField('OtherModel')                          # Many-to-Many
 
 ```
+<h3> command line </h3>
 
-# models.py
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+# admin.py
 
 ```python
 
