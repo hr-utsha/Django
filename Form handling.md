@@ -11,9 +11,30 @@ Django-তে মূলত দুই ধরনের ফর্ম ব্যব�
 ```
 from django import forms
 
-class MyForm(forms.Form):
-    name = forms.CharField(max_length=100, required=True)
-    email = forms.EmailField(required=True)
+class Registration(forms.Form):
+    name = forms.CharField(
+        label='Name',
+        max_length=100, 
+        label_suffix=":",
+        help_text="Enter your name here",
+        widget=forms.TextInput(attrs={'placeholder': 'Enter Your Name'}),
+        # validators = [MinLengthValidator(3)],
+    )
+    email = forms.EmailField(
+        label='Email', 
+        initial='@gmail.com',
+        widget=forms.EmailInput(attrs={'placeholder': 'Your Email'}),
+        disabled=True,
+    )
+    age = forms.IntegerField(
+        label='age',
+        min_value=0,
+    )
+    password = forms.CharField(
+        label='Password', 
+        widget=forms.PasswordInput(attrs={'placeholder': 'Your Password'})
+    )
+
     phone = forms.RegexField(regex=r'^\+?1?\d{9,15}$')
     website = forms.URLField(required=False)
 
