@@ -16,9 +16,9 @@ class MyForm(forms.Form):
     email = forms.EmailField(required=True)
     phone = forms.RegexField(regex=r'^\+?1?\d{9,15}$')
     website = forms.URLField(required=False)
+
     age = forms.IntegerField(min_value=0, max_value=120)
-    price = forms.FloatField()
-    birth_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+    price = forms.FloatField() 
 ```
 
 <h3> 📅 Date & Time Field</h3>
