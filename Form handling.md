@@ -17,6 +17,12 @@ class MyForm(forms.Form):
     phone = forms.RegexField(regex=r'^\+?1?\d{9,15}$')
     website = forms.URLField(required=False)
 
+    password = forms.CharField(
+        max_length=100, 
+        widget=forms.PasswordInput(attrs={'placeholder': 'Password'}),
+        label='Password'
+    )
+
     age = forms.IntegerField(min_value=0, max_value=120)
     price = forms.FloatField() 
 ```
@@ -40,11 +46,16 @@ agree = forms.BooleanField(required=True)
 <h3> ✅ Choice Fields :  </h3>
 
 ```
-GENDER_CHOICES = [('M', 'Male'), ('F', 'Female')]
+GENDER_CHOICES = [
+    ('M', 'Male'), 
+    ('F', 'Female'),
+    ('O', 'Others')]
 gender = forms.ChoiceField(choices=GENDER_CHOICES)
 
-
-interests = forms.MultipleChoiceField(choices=[('1', 'Sports'), ('2', 'Music')])
+INTEREST_CHOICES = [
+    ('1', 'Sports'), 
+    ('2', 'Music')]
+interests = forms.MultipleChoiceField(choices=INTEREST_CHOICES)
 ```
 <h3> 📁 File & Image Fields </h3>
 
