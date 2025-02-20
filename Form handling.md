@@ -15,6 +15,7 @@ class MyForm(forms.Form):
     name = forms.CharField(max_length=100, required=True)
     email = forms.EmailField(required=True)
     phone = forms.RegexField(regex=r'^\+?1?\d{9,15}$')
+    website = forms.URLField(required=False)
     age = forms.IntegerField(min_value=0, max_value=120)
     price = forms.FloatField()
     birth_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
@@ -50,4 +51,20 @@ interests = forms.MultipleChoiceField(choices=[('1', 'Sports'), ('2', 'Music')])
 ```
 resume = forms.FileField()
 avatar = forms.ImageField()
+```
+
+<h3> Example : </h3>
+
+```
+from django import forms
+
+class UserProfileForm(forms.Form):
+    name = forms.CharField(max_length=100, label='Full Name')
+    email = forms.EmailField()
+    age = forms.IntegerField(min_value=0)
+    birth_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+    gender = forms.ChoiceField(choices=[('M', 'Male'), ('F', 'Female')])
+    interests = forms.MultipleChoiceField(choices=[('sports', 'Sports'), ('music', 'Music')])
+    profile_picture = forms.ImageField(required=False)
+    agree_terms = forms.BooleanField(label='I agree to the terms and conditions')
 ```
