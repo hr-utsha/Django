@@ -37,6 +37,9 @@ models.OneToOneField('OtherModel', on_delete=models.CASCADE)  # One-to-One
 models.ManyToManyField('OtherModel')                          # Many-to-Many
 
 ```
+<br>
+পরে কিছু add করলে default="nothing"
+
 <h3> command line </h3>
 
 ```
