@@ -20,7 +20,7 @@ class MyForm(forms.Form):
     birth_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
 ```
 
-<h3>Date & Time Field</h3>
+<h3> 📅 Date & Time Field</h3>
 
 ```
 birth_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
@@ -44,7 +44,10 @@ gender = forms.ChoiceField(choices=GENDER_CHOICES)
 
 
 interests = forms.MultipleChoiceField(choices=[('1', 'Sports'), ('2', 'Music')])
+```
+<h3> 📁 File & Image Fields </h3>
 
 ```
-
-
+resume = forms.FileField()
+avatar = forms.ImageField()
+```
