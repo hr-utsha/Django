@@ -38,7 +38,7 @@ models.ManyToManyField('OtherModel')                          # Many-to-Many
 
 ```
 <br>
-primary_key=True
+primary_key=True <br>
 পরে কিছু add করলে default="nothing"
 
 <h3> command line </h3>
