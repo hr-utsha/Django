@@ -24,8 +24,8 @@ models.DurationField()
 <h3>File & Images Fields: </h3>
 
 ```
-models.FileField(upload_to='uploads/')  # File uploads
-models.ImageField(upload_to='images/')  # Image uploads (requires Pillow library)
+models.FileField(upload_to='uploads/') 
+models.ImageField(upload_to='images/')   # (requires Pillow library)
 
 ```
 
