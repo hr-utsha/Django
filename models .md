@@ -57,7 +57,7 @@ from .models import User
 from . import Student
 
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ['name','email','password']
+    list_display = ['id','name','email','password']
 
 admin.site.register(Student,StudentAdmin)
 
