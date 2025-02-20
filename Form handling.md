@@ -68,15 +68,22 @@ agree = forms.BooleanField(required=True)
 
 ```
 GENDER_CHOICES = [
-    ('M', 'Male'), 
-    ('F', 'Female'),
-    ('O', 'Others')]
-gender = forms.ChoiceField(choices=GENDER_CHOICES)
+        ('M', 'Male'), 
+        ('F', 'Female'),
+        ('O', 'Others')]
+gender = forms.ChoiceField(
+      label='gender',
+      choices=GENDER_CHOICES
+)
 
 INTEREST_CHOICES = [
-    ('1', 'Sports'), 
-    ('2', 'Music')]
-interests = forms.MultipleChoiceField(choices=INTEREST_CHOICES)
+        ('1', 'Sports'), 
+        ('2', 'Music')]
+interests = forms.MultipleChoiceField(
+        label='interests',
+        choices=INTEREST_CHOICES,
+        required=False,
+)
 ```
 <h3> 📁 File & Image Fields </h3>
 
