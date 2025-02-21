@@ -57,5 +57,5 @@ def user_form_view(request):
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-    </div>
+</div>
 ```
